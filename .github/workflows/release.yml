@@ -127,6 +127,7 @@ jobs:
           docker build . --target desktop --build-arg RID=linux-x64 -t tmp-desktop-linux64
           docker create --name tmp-desktop-linux64 tmp-desktop-linux64
           docker cp tmp-desktop-linux64:/app/PKVault.AppImage PKVault.AppImage
+          chmod +x PKVault.AppImage
 
           docker rm tmp-desktop-linux64
           docker rmi tmp-desktop-linux64
